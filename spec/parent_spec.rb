@@ -1,24 +1,34 @@
 require 'spec_helper'
+require_relative '../parent'
 
 describe Parent do
 
   before(:context) do
-    @parent = Parent.new("david",30,"male")
+    @parent = Parent.new("Bryan", 53, "male")
   end
 
 
   describe "Initialization" do
-    it "is an instance of the Parent class" do
-
+    it "should be an instance of the grandparent class" do
+      expect(@parent).to be_instance_of(Parent)
     end
-    it "is assigned a name" do
+  end
 
+  describe "#name" do
+    it "should be the name in the instance of the grandparent class" do
+      expect(@parent.name).to eq("Bryan")
     end
-    it "is assigned an age" do
+  end
 
+  describe "#age" do
+    it "should be the age in the instance of the grandparent class" do
+      expect(@parent.age).to eq(53)
     end
-    it "is assigned a gender" do
+  end
 
+  describe "#gender" do
+    it "should be the gender in the instance of the grandparent class" do
+      expect(@parent.gender).to eq("male")
     end
   end
 
